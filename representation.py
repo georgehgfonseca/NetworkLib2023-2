@@ -9,7 +9,7 @@ g = [[0, 1, 0, 1],
 print(f"There is edge from {2} to {3}? {g[2][3]}")
 
 # Print all neighbors of node 2
-for j in range(g[2]):
+for j in range(len(g[2])):
   if g[2][j] == 1:
     print(f"Node 2 has neighbor {j}")
 
@@ -67,6 +67,6 @@ g = { "Ana":  {"Bia": 5, "Duda": 4},
       "Duda": {"Ana": 4, "Bia": 1, "Caio": 2} }
 
 # Check if there is edge from node "Caio" to node "Duda"
-print(f"Edge from Caio to Duda has weight? {g['Caio']['Duda']}")
+print(f"Edge from Caio to Duda has weight: {g['Caio']['Duda']}")
 
 # Now check graph.py for object oriented implementation which we will use in the next classes
