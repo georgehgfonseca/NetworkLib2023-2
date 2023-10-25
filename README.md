@@ -4,7 +4,7 @@ Essa projeto será construído ao longo das aulas práticas em 2023-2 de CSI105 
 
 ## Objetivo
 
-O objetivo é criar uma biblioteca de algoritmos em grafos, algo similar ao NetworkX, mas em menor escala devido a limitações de tempo.
+O objetivo é criar uma biblioteca de algoritmos em grafos, algo similar ao [NetworkX](https://networkx.org/documentation/stable/index.html), mas em menor escala devido a limitações de tempo.
 
 A biblioteca será atualizada conforme o progresso de cada aula prática.
 
