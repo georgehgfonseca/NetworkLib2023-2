@@ -4,7 +4,7 @@ Essa projeto será construído ao longo das aulas práticas em 2023-2 de CSI105 
 
 ## Objetivo
 
-O objetivo é criar uma biblioteca de algoritmos em grafos, algo similar ao NetworkX, mas em menor escala devido a limitações de tempo.
+O objetivo é criar uma biblioteca de algoritmos em grafos, algo similar ao [NetworkX](https://networkx.org/documentation/stable/index.html), mas em menor escala devido a limitações de tempo.
 
 A biblioteca será atualizada conforme o progresso de cada aula prática.
 
@@ -24,4 +24,6 @@ A biblioteca contempla os seguintes tópicos:
 
 ## Referências
 
-Videoaulas sobre os conceitos abordados estão disponíveis no meu canal do [Youtube]([https://youtu.be/hi7dDDxWxQ8](https://www.youtube.com/watch?v=qguA0uwR-ao&list=PLsfh2zkrGs9lf7im2y6ZDlbIrspKBdVD3&ab_channel=GeorgeFonseca)) 
+Videoaulas sobre os conceitos abordados estão disponíveis no meu canal do [Youtube](https://youtu.be/hi7dDDxWxQ8](https://www.youtube.com/watch?v=qguA0uwR-ao&list=PLsfh2zkrGs9lf7im2y6ZDlbIrspKBdVD3&ab_channel=GeorgeFonseca)https://www.youtube.com/watch?v=qguA0uwR-ao&list=PLsfh2zkrGs9lf7im2y6ZDlbIrspKBdVD3&ab_channel=GeorgeFonseca)
+
+As notas de aula estão disponíveis no meu [site](http://professor.ufop.br/sites/default/files/george/files/e01_programacao_em_python.pdf) e exercícios adicionais podem ser acessados no Moodle.
