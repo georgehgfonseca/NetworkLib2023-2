@@ -24,4 +24,6 @@ A biblioteca contempla os seguintes tópicos:
 
 ## Referências
 
-Videoaulas sobre os conceitos abordados estão disponíveis no meu canal do [Youtube]([https://youtu.be/hi7dDDxWxQ8](https://www.youtube.com/watch?v=qguA0uwR-ao&list=PLsfh2zkrGs9lf7im2y6ZDlbIrspKBdVD3&ab_channel=GeorgeFonseca)) 
+Videoaulas sobre os conceitos abordados estão disponíveis no meu canal do [Youtube](https://youtu.be/hi7dDDxWxQ8](https://www.youtube.com/watch?v=qguA0uwR-ao&list=PLsfh2zkrGs9lf7im2y6ZDlbIrspKBdVD3&ab_channel=GeorgeFonseca)https://www.youtube.com/watch?v=qguA0uwR-ao&list=PLsfh2zkrGs9lf7im2y6ZDlbIrspKBdVD3&ab_channel=GeorgeFonseca)
+
+As notas de aula estão disponíveis no meu [site](http://professor.ufop.br/sites/default/files/george/files/e01_programacao_em_python.pdf) e exercícios adicionais podem ser acessados no Moodle.
