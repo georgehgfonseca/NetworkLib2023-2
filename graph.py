@@ -8,9 +8,9 @@ class Graph:
   def add_node(self, node): #Reduzido de O(n) p/ O(1)
     try: 
       if self.adj[node] != {}:
+        #print(f'Key {node} already exists and isnt null')
         return
     except KeyError:
-      #print(f'Key {node} already exists and isnt null')
       self.adj[node] = {}
       self.num_nodes += 1
       
