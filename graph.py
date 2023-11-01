@@ -31,6 +31,9 @@ class Graph:
     except KeyError:
       return False
     
+  def neighbors(self, node):
+    return list(self.adj[node].keys())
+
   def degree_out(self, node):
     return len(self.adj[node])
   
@@ -40,9 +43,14 @@ class Graph:
       if node in self.adj[key]:
         count += 1
     return count  
-  
-  def neighbors(self, node):
-    return list(self.adj[node].keys())
+
+  def highest_degree_in(self):
+    highest = 0
+    for node in self.adj:
+      degree_in_node = self.degree_in(node)
+      if degree_in_node > highest:
+        highest = degree_in_node
+    return highest
 
   def __repr__(self) -> str:
     str = ""
