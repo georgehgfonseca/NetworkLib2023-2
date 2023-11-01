@@ -5,16 +5,18 @@ class Graph:
     self.num_edges = 0
     self.adj = {}
 
-  def add_node(self, node):
-    if node not in self.adj:
+  def add_node(self, node): #Reduzido de O(n) p/ O(1)
+    try: 
+      if self.adj[node] != {}:
+        #print(f'Key {node} already exists and isnt null')
+        return
+    except KeyError:
       self.adj[node] = {}
       self.num_nodes += 1
       
-  def add_edge(self, u, v, weight):
-    if u not in self.adj:
-      self.add_node(u)
-    if v not in self.adj:
-      self.add_node(v)
+  def add_edge(self, u, v, weight): #Reduzido de O(2n) p/ O(1)
+    self.add_node(u)
+    self.add_node(v)
     self.adj[u][v] = weight
     self.num_edges += 1
 
@@ -47,3 +49,4 @@ class Graph:
     for u in self.adj:
       str += f"{u} -> {self.adj[u]}\n"
     return str
+
