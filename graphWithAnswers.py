@@ -12,7 +12,7 @@ class Graph:
     except KeyError:
       self.adj[node] = {}
       self.num_nodes += 1
-
+      
   def add_nodes(self, nodes):
     for node in nodes:
       self.add_node(node)
@@ -56,25 +56,60 @@ class Graph:
     return highest
   
   def density(self):
-    pass
+    return self.num_edges / (self.num_nodes * (self.num_nodes - 1))
   
   def is_regular(self):
-    pass
+    first_node = list(self.adj.keys())[0]
+    degree_first_node = self.adj[first_node]
+    for node in self.adj:
+      if len(self.adj[node]) != degree_first_node:
+        return False
+      
+  def is_oriented(self):
+    for u in self.adj:
+      for v in self.adj[u]:
+        if not self.there_is_edge(v, u):
+          return False
+    return True
 
   def is_complete(self):
-    pass
+    return self.density() == 1
+    
 
   def is_subgraph_of(self, g2):
-    pass
+    if self.num_nodes > g2.num_nodes or self.num_edges > g2.num_edges:
+      return False
+    for u in self.adj:
+      for v in self.adj[u]:
+        if not g2.there_is_edge(u, v):
+          return False
+    return True
 
   def strongest_connection(self):
-    pass
+    strongest = (None, None, float("-inf"))
+    for u in self.adj:
+      for v in self.adj[u]:
+        if self.adj[u][v] > strongest[2]:
+          strongest = (u, v, self.adj[u][v])
+    return strongest
    
   def weakest_connection(self):
-    pass
+    weakest = (None, None, float("inf"))
+    for u in self.adj:
+      for v in self.adj[u]:
+        if self.adj[u][v] < weakest[2]:
+          weakest = (u, v, self.adj[u][v])
+    return weakest
 
   def normalize_weights(self):
-    pass
+    highest_weight = self.strongest_connection()[2]
+    smallest_weight = self.weakest_connection()[2]
+    if highest_weight - smallest_weight == 0:
+      print("WARN:  all weights are the same")
+      return
+    for u in self.adj:
+      for v in self.adj[u]:
+        self.adj[u][v] = (self.adj[u][v] - smallest_weight) / (highest_weight - smallest_weight)
 
   def bfs(self, s):
     pass
