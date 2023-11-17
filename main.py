@@ -1,13 +1,13 @@
 from copy import deepcopy
-from graphWithAnswers import Graph
-# from graph import Graph
+# from graphWithAnswers import Graph
+from graph import Graph
 
 # Lesson 1 - Graph representation and creation
 g = Graph()
-g.add_two_way_edge("Ana", "Bia", 5)
-g.add_two_way_edge("Ana", "Caio", 2)
-g.add_two_way_edge("Caio", "Bia", 10)
-g.add_two_way_edge("Caio", "Duda", 7)
+g.add_undirected_edge("Ana", "Bia", 5)
+g.add_undirected_edge("Ana", "Caio", 2)
+g.add_undirected_edge("Caio", "Bia", 10)
+g.add_undirected_edge("Caio", "Duda", 7)
 print(g)
 print()
 
@@ -24,8 +24,8 @@ print("Is regular:", g.is_regular())
 print("Is complete:", g.is_complete())
 print("Is oriented:", g.is_oriented())
 g2 = Graph()
-g.add_two_way_edge("Ana", "Bia", 5)
-g.add_two_way_edge("Ana", "Caio", 2)
+g.add_undirected_edge("Ana", "Bia", 5)
+g.add_undirected_edge("Ana", "Caio", 2)
 print("Is subgraph of g2:", g.is_subgraph_of(g2))
 print("Strongest connection:", g.strongest_connection())
 print("Weakest connection:", g.weakest_connection())
@@ -37,13 +37,15 @@ print()
 # Lesson 4 - Graph traversal (BFS and DFS)
 g = Graph()
 g.add_nodes([0, 1, 2, 3, 4, 5, 6])
-g.add_two_way_edge(0, 2, 1)
-g.add_two_way_edge(0, 6, 1)
-g.add_two_way_edge(1, 4, 1)
-g.add_two_way_edge(1, 6, 1)
-g.add_two_way_edge(2, 3, 1)
-g.add_two_way_edge(2, 4, 1)
+g.add_undirected_edge(0, 2, 1)
+g.add_undirected_edge(0, 6, 1)
+g.add_undirected_edge(1, 4, 1)
+g.add_undirected_edge(1, 6, 1)
+g.add_undirected_edge(2, 3, 1)
+g.add_undirected_edge(2, 4, 1)
 print("BFS from 0:", g.bfs(0))
 print("DFS from 0:", g.dfs(0))
 print("Recursive DFS from 0:", g.dfs_rec(0))
 print()
+
+# Lesson 5 - Exercises
