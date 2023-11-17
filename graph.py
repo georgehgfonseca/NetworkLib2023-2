@@ -124,9 +124,6 @@ class Graph:
     """
     pass
 
-  def node_with_highest_degree_in(self) -> Any:    
-    pass
-
   def density(self) -> float:
     """
     Return the density of the graph.
@@ -235,3 +232,49 @@ class Graph:
     """
     pass
 
+  def node_with_highest_degree_in(self) -> Any:    
+    """
+    Find and return the node with the highest in-degree in the graph.
+
+    Returns:
+    The node with the highest in-degree in the graph.
+    """
+    pass
+
+  def node_with_highest_degree_out(self) -> Any:    
+    """
+    Find and return the node with the highest out-degree in the graph.
+
+    Returns:
+    The node with the highest out-degree in the graph.
+    """
+    pass
+
+  def remove_node(self, node: Any) -> None:    
+    """
+    Remove the specified node from the graph.
+
+    Parameters:
+    - node: The node to be removed from the graph.
+    """
+    pass
+
+  def remove_directed_edge(self, u: Any, v: Any) -> None:    
+    """
+    Remove the directed edge from node 'u' to node 'v' in the graph.
+
+    Parameters:
+    - u: The source node.
+    - v: The target node.
+    """
+    pass
+
+  def remove_undirected_edge(self, u: Any, v: Any) -> None:    
+    """
+    Remove the undirected edge between nodes 'u' and 'v' in the graph.
+
+    Parameters:
+    - u: One of the nodes.
+    - v: The other node.
+    """
+    pass
