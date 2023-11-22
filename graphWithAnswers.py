@@ -278,7 +278,26 @@ class Graph:
 
     This function explores the graph in depth-first order starting from the given source node 's'.
     """
-    pass
+    desc = {}
+    for node in self.adj:
+      desc[node] = 0
+    S = [s]
+    R = [s]
+    desc[s] = 1
+    while len(S) > 0:
+      u = S[-1]
+      unvisited_neighbor = None
+      for v in self.adj[u]:
+        if desc[v] == 0:
+          unvisited_neighbor = v
+          break
+      if unvisited_neighbor:
+        desc[unvisited_neighbor] = 1
+        S.append(unvisited_neighbor)
+        R.append(unvisited_neighbor)
+      else:
+        S.pop()
+    return R
 
   def dfs_rec(self, s: Any) -> List[Any]:
     """
@@ -289,11 +308,23 @@ class Graph:
 
     This function uses recursion to explore the graph in depth-first order starting from the given source node 's'.
     """
-    pass
+    desc = {}
+    for node in self.adj:
+      desc[node] = 0
+    R = []
+    self.dfs_rec_aux(s, desc, R)
+    return R
+
+  def dfs_rec_aux(self, u, desc, R):
+    desc[u] = 1
+    R.append(u)
+    for v in self.adj[u]:
+      if desc[v] == 0:
+        self.dfs_rec_aux(v, desc, R)
 
   def node_with_highest_degree_in(self) -> Any:    
     """
-    Find and return the node with the highest in-degree in the graph.
+    [Easy] Find and return the node with the highest in-degree in the graph.
 
     Returns:
     The node with the highest in-degree in the graph.
@@ -302,7 +333,7 @@ class Graph:
 
   def node_with_highest_degree_out(self) -> Any:    
     """
-    Find and return the node with the highest out-degree in the graph.
+    [Easy] Find and return the node with the highest out-degree in the graph.
 
     Returns:
     The node with the highest out-degree in the graph.
@@ -311,7 +342,7 @@ class Graph:
 
   def remove_node(self, node: Any) -> None:    
     """
-    Remove the specified node from the graph.
+    [Medium] Remove the specified node from the graph.
 
     Parameters:
     - node: The node to be removed from the graph.
@@ -320,7 +351,7 @@ class Graph:
 
   def remove_directed_edge(self, u: Any, v: Any) -> None:    
     """
-    Remove the directed edge from node 'u' to node 'v' in the graph.
+    [Easy] Remove the directed edge from node 'u' to node 'v' in the graph.
 
     Parameters:
     - u: The source node.
@@ -330,10 +361,105 @@ class Graph:
 
   def remove_undirected_edge(self, u: Any, v: Any) -> None:    
     """
-    Remove the undirected edge between nodes 'u' and 'v' in the graph.
+    [Easy] Remove the undirected edge between nodes 'u' and 'v' in the graph.
 
     Parameters:
     - u: One of the nodes.
     - v: The other node.
+    """
+    pass
+
+  def is_walk(self, nodes: List[any]) -> bool:
+    """
+    [Easy] Check if the sequence of nodes is a valid walk in this graph.
+
+    Parameters:
+    - nodes: Sequecen of nodes.
+
+    Returns:
+    True if nodes is a valid walk, False otherwise.
+    """
+    pass
+
+  def is_path(self, nodes: List[any]) -> bool:
+    """
+    [Medium] Check if the sequence of nodes is a valid path in this graph.
+
+    Parameters:
+    - nodes: Sequecen of nodes.
+
+    Returns:
+    True if nodes is a valid path, False otherwise.
+    """
+    pass
+
+  def is_trail(self, nodes: List[any]) -> bool:
+    """
+    [Medium] Check if the sequence of nodes is a valid trail in this graph.
+
+    Parameters:
+    - nodes: Sequecen of nodes.
+
+    Returns:
+    True if nodes is a valid trail, False otherwise.
+    """
+    pass
+
+  def is_cycle(self, nodes: List[any]) -> bool:
+    """
+    [Medium] Check if the sequence of nodes is a valid cycle in this graph.
+
+    Parameters:
+    - nodes: Sequecen of nodes.
+
+    Returns:
+    True if nodes is a valid cycle, False otherwise.
+    """
+    pass
+
+  def is_connected(self) -> bool:
+    """
+    [Medium] Check if the graph is connected.
+
+    Returns:
+    True if the graph is connected, False otherwise.
+    """
+    first_node = list(self.adj.keys())[0]
+    return len(self.bfs(first_node)) == self.num_nodes
+
+  def has_cycle(self) -> bool:
+    """
+    [Hard] Check if the graph has a cycle.
+
+    Returns:
+    True if the graph has a cycle, False otherwise.
+    """
+    pass
+
+  def is_bridge_edge(self, edge: Tuple[Any, Any]) -> bool:
+    """
+    [Hard] Check if the given edge is a bridge in this graph.
+
+    A bridge edge is one whose removal would disconnect the graph.
+
+    Parameters:
+    - edge: Pair of nodes.
+
+    Returns:
+    True if edge is a bridge, False otherwise.
+    """
+    pass
+
+  def is_linking_node(self, node: Any) -> bool:
+    """
+    [Hard] Check if the given node is a linking node in this graph.
+
+    A linking node is one whose removal would disconnect the graph.
+
+    Parameters:
+    - node: Node to check.
+
+    Returns:
+    True if node is a linking node, False otherwise.
     """
     pass

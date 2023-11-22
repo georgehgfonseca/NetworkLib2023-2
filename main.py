@@ -48,4 +48,5 @@ print("DFS from 0:", g.dfs(0))
 print("Recursive DFS from 0:", g.dfs_rec(0))
 print()
 
-# Lesson 5 - Exercises
+# Lesson 5 - Graph walk, path/trail and cycle/circuit
+
