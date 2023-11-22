@@ -345,7 +345,7 @@ class Graph:
     """
     pass
 
-  def is_bridge_edge(self, edge: (any, any)) -> bool:
+  def is_bridge_edge(self, edge: Tuple[Any, Any]) -> bool:
     """
     [Hard] Check if the given edge is a bridge in this graph.
 
@@ -359,7 +359,7 @@ class Graph:
     """
     pass
 
-  def is_linking_node(self, node: any) -> bool:
+  def is_linking_node(self, node: Any) -> bool:
     """
     [Hard] Check if the given node is a linking node in this graph.
 

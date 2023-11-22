@@ -201,7 +201,7 @@ class Graph:
           return False
     return True
 
-  def strongest_connection(self) -> Tuple(Any, Any, float):
+  def strongest_connection(self) -> Tuple[Any, Any, float]:
     """
     Return the edge having the highest weight in the graph.
 
@@ -215,7 +215,7 @@ class Graph:
           strongest = (u, v, self.adj[u][v])
     return strongest
    
-  def weakest_connection(self) -> Tuple(Any, Any, float):
+  def weakest_connection(self) -> Tuple[Any, Any, float]:
     """
     Return the edge having the weakest weight in the graph.
 
@@ -254,7 +254,20 @@ class Graph:
 
     This function explores the graph in breadth-first order starting from the given source node 's'.
     """
-    pass
+    desc = {}
+    for node in self.adj:
+      desc[node] = 0
+    Q = [s]
+    R = [s]
+    desc[s] = 1
+    while len(Q) > 0:
+      u = Q.pop(0)
+      for v in self.adj[u]:
+        if desc[v] == 0:
+          desc[v] = 1
+          Q.append(v)
+          R.append(v)
+    return R
 
   def dfs(self, s: Any) -> List[Any]:
     """

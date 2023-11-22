@@ -1,6 +1,6 @@
 from copy import deepcopy
-# from graphWithAnswers import Graph
-from graph import Graph
+from graphWithAnswers import Graph
+# from graph import Graph
 
 # Lesson 1 - Graph representation and creation
 g = Graph()
