@@ -1,6 +1,6 @@
 from copy import deepcopy
-# from graphWithAnswers import Graph
-from graph import Graph
+from graphWithAnswers import Graph
+# from graph import Graph
 
 # Lesson 1 - Graph representation and creation
 g = Graph()
@@ -46,7 +46,18 @@ g.add_undirected_edge(2, 4, 1)
 print("BFS from 0:", g.bfs(0))
 print("DFS from 0:", g.dfs(0))
 print("Recursive DFS from 0:", g.dfs_rec(0))
+print("Is connected:", g.is_connected())
 print()
 
 # Lesson 5 - Graph walk, path/trail and cycle/circuit
-
+nodes = [3, 2, 0]
+print("Is valid walk:", nodes, g.is_walk(nodes))
+nodes = [3, 2, 0]
+print("Is valid trail:", nodes, g.is_trail(nodes))
+nodes = [3, 2, 0]
+print("Is valid path:", nodes, g.is_path(nodes))
+nodes = [2, 0, 6, 1, 4, 2]
+print("Is valid circuit:", nodes, g.is_circuit(nodes))
+nodes = [2, 0, 6, 1, 4, 2]
+print("Is valid cycle:", nodes, g.is_cycle(nodes))
+print()

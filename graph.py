@@ -315,6 +315,18 @@ class Graph:
     """
     pass
 
+  def is_circuit(self, nodes: List[any]) -> bool:
+    """
+    [Medium] Check if the sequence of nodes is a valid circuit in this graph.
+
+    Parameters:
+    - nodes: Sequecen of nodes.
+
+    Returns:
+    True if nodes is a valid circuit, False otherwise.
+    """
+    pass
+
   def is_cycle(self, nodes: List[any]) -> bool:
     """
     [Medium] Check if the sequence of nodes is a valid cycle in this graph.
