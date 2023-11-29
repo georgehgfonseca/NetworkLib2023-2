@@ -145,6 +145,9 @@ class Graph:
     Returns:
     The density of the graph.
     """
+    if self.num_nodes <= 1:
+        return 0
+
     return self.num_edges / (self.num_nodes * (self.num_nodes - 1))
   
   def is_regular(self):
@@ -159,7 +162,8 @@ class Graph:
     for node in self.adj:
       if len(self.adj[node]) != degree_first_node:
         return False
-      
+    return True
+          
   def is_oriented(self):
     """
     Check if the graph is oriented.
