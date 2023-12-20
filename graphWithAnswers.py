@@ -1,5 +1,5 @@
 from typing import Any, List, Tuple
-
+import heapq
 class Graph:
 
   def __init__(self):
@@ -532,3 +532,93 @@ class Graph:
     True if node is a linking node, False otherwise.
     """
     pass
+
+
+  def extract_min(self, Q, dist):
+    min_Q = Q[0]
+    min_dist = dist[min_Q]
+    for i in range(1, len(Q)):
+      if dist[Q[i]] < min_dist:
+        min_dist = dist[Q[i]]
+        min_Q = Q[i]
+    return min_Q
+
+
+  def dijkstra_naive(self, s):
+    dist = {node:float("inf") for node in self.adj}
+    pred = {node:None for node in self.adj}
+    dist[s] = 0
+    Q = [node for node in self.adj]
+    while Q:
+      u = self.extract_min(Q, dist)
+      Q.remove(u)
+      for v in self.adj[u]:
+        if dist[v] > dist[u] + self.adj[u][v]:
+          dist[v] = dist[u] + self.adj[u][v]
+          pred[v] = u
+    return (dist, pred)
+
+
+  def dijkstra(self, s):
+    dist = {node:float("inf") for node in self.adj}
+    pred = {node:None for node in self.adj}
+    dist[s] = 0
+    Q = [(dist[s], s)]
+    while Q:
+      dist_u, u = heapq.heappop(Q)
+      for v in self.adj[u]:
+        if dist[v] > dist[u] + self.adj[u][v]:
+          dist[v] = dist[u] + self.adj[u][v]
+          heapq.heappush(Q, (dist[v], v))
+          pred[v] = u
+    return (dist, pred)
+
+
+  def bellman_ford_naive(self, s):
+    dist = {node:float("inf") for node in self.adj}
+    pred = {node:None for node in self.adj}
+    dist[s] = 0
+    for _ in range(len(self.adj) - 1):
+      for u in self.adj:
+        for v in self.adj[u]:
+          if dist[v] > dist[u] + self.adj[u][v]:
+            dist[v] = dist[u] + self.adj[u][v]
+            pred[v] = u
+    return (dist, pred)
+
+
+  def bellman_ford(self, s):
+    dist = {node:float("inf") for node in self.adj}
+    pred = {node:None for node in self.adj}
+    dist[s] = 0
+    for _ in range(len(self.adj) - 1):
+      changed = False
+      for u in self.adj:
+        for v in self.adj[u]:
+          if dist[v] > dist[u] + self.adj[u][v]:
+            changed = True
+            dist[v] = dist[u] + self.adj[u][v]
+            pred[v] = u
+      if not changed:
+        break
+    return (dist, pred)
+  
+
+  def read_from_file(self, file_name: str):
+    with open(file_name, 'r') as file:
+      i = 0
+      for line in file:
+          if i == 0:
+            line_content = line.strip().split()
+            num_nodes = int(line_content[0])
+            for i in range(num_nodes):
+              self.add_node(i)
+          else:
+            line_content = line.strip().split()
+            u, v, w = int(line_content[0]), int(line_content[1]), float(line_content[2])
+            self.add_directed_edge(u, v, w)
+
+
+
+
+
